@@ -18,7 +18,10 @@
         <div class="weather">
             <img src="./image/rain.png" class="weather-icon">
             <h1 class="temp">22°c</h1>
-            <h2 class="city">New York</h2>
+            <div class="container">
+                <h2 class="city">New York</h2>
+                <h2 class="weather-name">Rain</h2>
+            </div>
             <div class="details">
                 <div class="col">
                     <img src="./image/humidity.png">
@@ -64,28 +67,38 @@
             document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
             document.querySelector(".wind").innerHTML = data.wind.speed +"km/h";
 
+            const weather = data.weather[0].main; // Nơi chứa tên thời tiết của thành phố đó.
+            console.log(weather);
+
             if(data.weather[0].main == "Rain") {
                 weatherIcon.src = "./image/rain.png";
+                document.querySelector(".weather-name").innerHTML = weather;
                 // console.log("Weather")
             }
             else if(data.weather[0].main == "Clear") {
                 weatherIcon.src = "./image/sun.png";
+                document.querySelector(".weather-name").innerHTML = weather;
             }
             else if(data.weather[0].main == "Clouds") {
                 weatherIcon.src = "./image/clouds.png";
+                document.querySelector(".weather-name").innerHTML = weather;
                 // console.log("Weather cloud")
             }
             else if(data.weather[0].main == "Snow") {
                 weatherIcon.src = "./image/snow.png";
+                document.querySelector(".weather-name").innerHTML = weather;
             }
             else if(data.weather[0].main == "Thunderstorm") {
                 weatherIcon.src = "./image/thunderstorm.png";
+                document.querySelector(".weather-name").innerHTML = weather;
             }
             else if(data.weather[0].main == "Drizzle") {
                 weatherIcon.src = "./image/dizzle.png";
+                document.querySelector(".weather-name").innerHTML = weather;
             }
             else if(data.weather[0].main == "Mist") {
                 weatherIcon.src = "./image/mist.png";
+                document.querySelector(".weather-name").innerHTML = weather;
             };
 
             document.querySelector(".weather").style.display = "block";

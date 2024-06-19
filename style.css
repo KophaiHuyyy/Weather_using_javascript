@@ -95,6 +95,12 @@ body {
     margin-top: -6px;
 }
 
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
 .weather {
     display: none;
 }
@@ -103,6 +109,6 @@ body {
     display: none;
     text-align: left;
     margin-left: 10px;
-    font-size: 14px;
+    font-size: 16px;
     margin-top: 10px;
 }
